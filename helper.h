@@ -27,7 +27,6 @@
     / { \
         behaviors { \
             name: name { \
-                label = ZMK_HELPER_STRINGIFY(ZB_ ## name); \
                 ZMK_BEHAVIOR_CORE_ ## type; \
                 __VA_ARGS__ \
             }; \
@@ -43,7 +42,6 @@
         keymap { \
             compatible = "zmk,keymap"; \
             layer_ ## name { \
-                label = ZMK_HELPER_STRINGIFY(name); \
                 bindings = <layout>; \
             }; \
         }; \
@@ -53,7 +51,6 @@
         keymap { \
             compatible = "zmk,keymap"; \
             layer_ ## name { \
-                label = ZMK_HELPER_STRINGIFY(name); \
                 bindings = <layout>; \
                 sensor-bindings = <sensors>; \
             }; \
@@ -127,7 +124,6 @@
         macros { \
             name: name { \
                 compatible = "zmk,behavior-macro"; \
-                label = ZMK_HELPER_STRINGIFY(UC_MACRO_ ## name); \
                 wait-ms = <0>; \
                 tap-ms = <0>; \
                 #binding-cells = <0>; \
@@ -141,7 +137,6 @@
         behaviors { \
             name: name { \
                 compatible = "zmk,behavior-mod-morph"; \
-                label = ZMK_HELPER_STRINGIFY(UC_MORPH_ ## name); \
                 #binding-cells = <0>; \
                 bindings = <uc_binding>, <shifted_uc_binding>; \
                 mods = <(MOD_LSFT|MOD_RSFT)>; \
